@@ -1,0 +1,173 @@
+﻿body {
+    padding-top: 50px;
+    /*padding-bottom: 20px;*/
+    background-color: #f5a456;
+    background-image: url(../Images/brick-wall-dark.png);
+}
+
+.navbar-default {
+    /*background-image: -webkit-linear-gradient(top, #ed6637 0%, #dd4814 100%);
+  background-image: -o-linear-gradient(top, #ed6637 0%, #dd4814 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ed6637), to(#dd4814));
+  background-image: linear-gradient(to bottom, #ed6637 0%, #dd4814 100%);*/
+    background-image: url(../Images/brick-wall-dark.png) !important;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.bg-home {
+    background-color: #ffffff;
+    /*background-image: url('../Images/brick-wall-dark.png');*/
+}
+
+.navbar-brand1 {
+    float: left;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 50px;
+}
+
+.bg-site {
+    background-color: #ffffff; /*#dd4814;*/
+    border: 1px solid #dd4814;
+    border-radius: 4px;
+}
+
+.bg-events {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+.bg-siteimage {
+    color: #fff;
+    background-color: #dd4814;
+    border: 1px solid #dd4814;
+    border-radius: 4px;
+}
+
+.bg-adspace {
+    background-color: gold;
+}
+
+/*audio {
+    width: 48px;
+}*/
+
+.adspace {
+    /*margin-bottom: 0px;*/
+    /*background-color: gold;*/
+    /*background-image: url('../Images/gray-floral.png');*/
+    padding-top: 4px;
+    /*background-image:url(../Images/bg.png);*/
+    border: 1px solid transparent;
+    /*border-radius: 4px;*/
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.adspace-body {
+    /*padding: 15px;*/
+    color: blue;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px #ffffff;
+    font-size: 16px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+/*.audiocontrols {
+    visibility: hidden;
+    display: inline;
+}*/
+
+/*@media (min-width: 768px) {
+    .audiocontrols {
+        width: 225px;
+        height: 25px;
+        visibility: visible;
+        display: block;
+    }
+}*/
+
+@media screen and (max-width: 768px) {
+    .audiocontrol {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.audiocontrol {
+    width: 48px; /* dimensions of the image */
+    height: 32px;
+}
+
+.imgaudioplaypause {
+    height: 24px;
+    width: 24px; /* dimensions of the image */
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.play {
+    background-image: url('../Images/Play.png');
+}
+
+.pause {
+    background-image: url('../Images/Pause.png');
+}
+
+.headertext {
+    color: rgb(247, 247, 247);
+    font-size: 15px;
+    font-weight: bold;
+    /*background-color: rgb(120, 120, 120);*/
+    text-shadow: rgb(3, 3, 3) -1px 3px 4px;
+}
+
+.headertext1 {
+    color: rgb(247, 247, 10);
+    font-size: 15px;
+}
+
+
+
+
+.carousel-image {
+    /*position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;*/
+    z-index: 8;
+    /*padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);*/
+}
+
+/*.thumbnail-bgimage {
+    background-image: url('../Images/satcharitrabground.png');
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}*/
