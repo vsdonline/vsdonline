@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Viswa Sai Dwarakamai</title>
     <link rel="shortcut icon" href="~/Images/vsd_80x80.png" />
-
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top">
@@ -48,14 +45,18 @@
                             </ul>
                         </li>*@
                     <li>@Html.ActionLink("Satcharitra", "Satcharitra", "Home")</li>
+                    <li>@Html.ActionLink("Aarthi", "Aarthi", "Home")</li>
                     <li>@Html.ActionLink("Donation", "Donate", "Home")</li>
                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
         </div>
+
     </div>
+
     <div class="adspace bg-adspace">
         <div class="adspace-body" align="center">
             <marquee scrollamount="3">Sri Shiridi Sai Gayatri Mahamantra - Om Shirdi Vasaya Vidmahe Sarva Siddischa Dhimahi Thanno Sai Prachodayath.          Happy Ugadi and Sri Rama Navami</marquee>
@@ -85,11 +86,9 @@
             </div>
         </div>*@
     @*</div>*@
-
     @*<div class="container body-content">*@
     @RenderBody()
     @*</div>*@
-
     @*<hr />*@
     <footer class="footer bg-primary">
         <div class="container">
@@ -107,7 +106,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
+                    @*<div class="hitcount">Hit Count: @VSDOnline.MvcApplication.TotalNumberOfUsers</div>*@
+                </div>
+                <div class="col-lg-6">
                     @*<img id="imgaudioplaypause" class="imgaudioplaypause pause pull-right" />*@
                     <audio class="audiocontrol pull-right" src="~/Audio/vsdsong.mp3" autoplay controls loop>
                         @*<p>browser does not support the audio element.</p>*@
@@ -117,12 +119,10 @@
         </div>
         @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
     </footer>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.RenderFormat("<script src='{0}' defer></script>", "~/bundles/site")
     @RenderSection("scripts", required: false)
-
 
 </body>
 </html>

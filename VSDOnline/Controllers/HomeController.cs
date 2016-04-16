@@ -45,5 +45,12 @@ namespace VSDOnline.Controllers
             return View();
         }
 
+        public ActionResult Aarthi()
+        {
+            ViewBag.Message = "Aarthi";
+            return View();
+        }
+
+
     }
 }
