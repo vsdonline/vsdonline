@@ -3,7 +3,30 @@
 @{
     ViewBag.Title = "Error";
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
+<div class="container bg-site">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Error
+                <small>Viswasai Dwarakamai</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li class="active">Error</li>
+            </ol>
+        </div>
+    </div>
+    <h1 class="text-danger">Error.</h1>
+    @{
+        if (String.IsNullOrEmpty(ViewBag.errorMessage))
+        {
+            <h2 class="text-danger">An error occurred while processing your request.</h2>
+        }
+        else
+        {
+            <h2 class="text-danger">@ViewBag.errorMessage</h2>
+        }
+    }
+</div>

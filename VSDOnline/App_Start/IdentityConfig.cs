@@ -11,16 +11,86 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using VSDOnline.Models;
+using System.Net.Mail;
+using System.Net.Mime;
+using System.IO;
+using System.Configuration;
 
 namespace VSDOnline
 {
     public class EmailService : IIdentityMessageService
     {
+        private string _sendEmailBcc;
+        private string _sendEmailFrom;
+
+        public string SendEmailFrom
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_sendEmailFrom))
+                {
+                    _sendEmailFrom = ConfigurationManager.AppSettings.Get("SendEmailFrom");
+                }
+                return _sendEmailFrom;
+            }
+            set
+            {
+                _sendEmailFrom = value;
+            }
+        }
+        public string SendEmailBcc
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_sendEmailBcc))
+                {
+                    _sendEmailBcc = ConfigurationManager.AppSettings.Get("SendEmailBcc");
+                }
+                return _sendEmailBcc;
+            }
+            set
+            {
+                _sendEmailBcc = value;
+            }
+
+        }
+
+
         public Task SendAsync(IdentityMessage message)
         {
+            return sendMail(message);
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            //return Task.FromResult(0);
         }
+
+        private async Task sendMail(IdentityMessage message)
+        {
+            //#region formatter
+            //string text = string.Format("Please click on this link to {0}: {1}", message.Subject, message.Body);
+            //string html = "Please confirm your account by clicking this link: <a href=\"" + message.Body + "\">link</a><br/>";
+
+            //html += HttpUtility.HtmlEncode(@"Or click on the copy the following link on the browser:" + message.Body);
+            //#endregion
+
+            MailMessage msg = new MailMessage();
+            msg.From = new MailAddress(SendEmailFrom);
+            msg.To.Add(new MailAddress(message.Destination));
+            msg.Bcc.Add(new MailAddress(SendEmailBcc));
+            msg.Subject = message.Subject;
+            msg.Body = message.Body;
+            msg.IsBodyHtml = true;
+            //msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
+            //msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+
+            //SmtpClient smtpClient = new SmtpClient("smtpout.secureserver.net", Convert.ToInt32(3535));
+            //System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("", "");
+            //smtpClient.UseDefaultCredentials = false;
+            SmtpClient smtpClient = new SmtpClient();
+            // smtpClient.Credentials = credentials;
+            //smtpClient.EnableSsl = true;
+            await smtpClient.SendMailAsync(msg);
+        }
+
     }
 
     public class SmsService : IIdentityMessageService
@@ -40,7 +110,7 @@ namespace VSDOnline
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -81,7 +151,7 @@ namespace VSDOnline
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;

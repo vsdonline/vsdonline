@@ -28,7 +28,8 @@
                 @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-left">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Services", "Services", "Home")</li>
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
@@ -37,7 +38,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Samellanam</a></li>
                                 <li><a href="#">Satsang</a></li>
-                                <li><a href="#">Sa</a></li>
+                                <li><a href="#">Sa</a></li>http://localhost:50247/#
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
                                 <li class="divider"></li>
@@ -50,9 +51,7 @@
                     <li>@Html.ActionLink("About Us", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
-
         </div>
 
     </div>
@@ -90,6 +89,7 @@
     @RenderBody()
     @*</div>*@
     @*<hr />*@
+    <hr/>
     <footer class="footer bg-primary">
         <div class="container">
             <div class="row">
