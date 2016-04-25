@@ -39,6 +39,9 @@ namespace VSDOnline
                 "~/Scripts/site.js",
                 "~/Scripts/google-analytics.js"
             ));
+
+            bundles.Add(new ScriptBundle("~/bundles/histats").Include(
+                "~/Scripts/histats-counter.js"));
         }
     }
 }
