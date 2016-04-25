@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Viswa Sai Dwarakamai</title>
-    <link rel="shortcut icon" href="~/Images/vsd_80x80.png" />
+    <link rel="shortcut icon" href="~/Images/NewVsdLogo.png" />
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <!--[if lt IE 9]>
@@ -14,7 +14,52 @@
     <![endif]-->
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
+    @*<header class="image-bg-fixed-height bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3 center-block">
+                        <img class="img-responsive" style="position:absolute;z-index:2" src="~/Images/banner.png" alt="saibaba">
+                        <div id="rays"></div>
+                    </div>
+                    <div class="col-xs-6 center-block">
+                        <h1 class="text-danger">VISWA SAI DWARAKAMAI</h1>
+                        <div class="rw-wrapper">
+                            <div class="rw-sentence rw-words rw-words-1 text-left text-justify">
+                                <div>Whosoever puts their feet on Shirdi soil, their sufferings will come to an end.</div>
+                                <div>The wretched and miserable will rise to joy and happiness as soon as they climb the steps of the mosque.</div>
+                                <div>I shall be ever active and vigorous even after leaving this earthly body.</div>
+                                <div>My tomb shall bless and speak to the needs of my devotees.</div>
+                                <div>I shall be active and vigorous even from my tomb.</div>
+                                <div>My mortal remains will speak from my tomb.</div>
+                                <div>I am ever living to help and guide all who come to me, who surrender to me and who seek refuge in me.</div>
+                                <div>If you look to me, I look to you.</div>
+                                <div>If you cast your burden on me, I shall surely bear it.</div>
+                                <div>If you seek my advice and help, it shall be given to you at once.</div>
+                                <div>There shall be no want in the house of my devotee.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-3 center-block">
+                        <img class="img-responsive" style="position:absolute;z-index:2" src="~/Images/vanamma.png" alt="vanamma">
+                        <div id="rays"></div>
+
+                    </div>
+                </div>
+
+            </div>
+        </header>*@
+    @*<header class="page-header bg-primary">
+            <div class="container bg-primary">
+                <div class="row">
+                    <div class="col-xs-3"><img class="img-responsive" src="~/Images/banner.png"></div>
+                    <div class="col-xs-6">fasdfasdf</div>
+                    <div class="col-xs-3"><img class="img-responsive pull-right" src="~/Images/vanamma.png"></div>
+                </div>
+
+            </div>
+        </header>*@
+    <div class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="197">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,8 +93,8 @@
                     <li>@Html.ActionLink("Satcharitra", "Satcharitra", "Home")</li>
                     <li>@Html.ActionLink("Aarthi", "Aarthi", "Home")</li>
                     <li>@Html.ActionLink("Donation", "Donate", "Home")</li>
-                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("AboutUs", "About", "Home")</li>
+                    <li>@Html.ActionLink("ContactUs", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -89,7 +134,7 @@
     @RenderBody()
     @*</div>*@
     @*<hr />*@
-    <hr/>
+    <hr />
     <footer class="footer bg-primary">
         <div class="container">
             <div class="row">
@@ -107,6 +152,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
+                    @*<div class="navbar-text pull-right">*@
+                        <a href="https://www.youtube.com/channel/UCc6eyNu2oyhHBw1_u8mIi4g" target="_blank" class="btn btn-youtube" alt="viswasai dwarakamai youtube channel">
+                            @*<img class="img-responsive"  src="~/Images/socialmedia/YouTube-logo-full_color.png" width="48" height="48"/>*@
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    @*</div>*@
                     @*<div class="hitcount">Hit Count: @VSDOnline.MvcApplication.TotalNumberOfUsers</div>*@
                 </div>
                 <div class="col-lg-6">

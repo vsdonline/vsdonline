@@ -20,12 +20,14 @@ namespace VSDOnline
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+          "~/Scripts/bootstrap.js",
+          "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/social-buttons.css",
                       "~/Content/site.css",
                       "~/Content/spinrays.css",
                       "~/Content/adtext-rotator.css"));
@@ -34,7 +36,8 @@ namespace VSDOnline
                 "~/Scripts/youtubeAudio.js"
                         ));
             bundles.Add(new ScriptBundle("~/bundles/site").Include(
-                "~/Scripts/site.js"
+                "~/Scripts/site.js",
+                "~/Scripts/google-analytics.js"
             ));
         }
     }

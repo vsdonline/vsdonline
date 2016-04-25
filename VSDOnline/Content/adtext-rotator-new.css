@@ -1,0 +1,221 @@
+﻿/*ad text rotator*/
+.rw-wrapper {
+    width: 90%;
+    color: #FEFBA5;
+    position: relative;
+    margin: 50px auto 0 auto;
+    font-family: 'Verdana, Arial, Helvetica, sans-serif';
+    padding: 0;
+    font-weight: bold;
+}
+
+.rw-sentence {
+    margin: 0;
+    font-size: 25px;
+    /* 	text-align: left;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.8); */
+}
+
+.rw-words {
+    display: inline;
+    /* text-indent: 10px; */
+}
+
+.rw-words-1 div {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    -webkit-animation: rotateWord 33s linear infinite 0s;
+    animation: rotateWord 33s linear infinite 0s;
+    animation: rotateWord 33s linear infinite 0s;
+}
+
+    .rw-words-1 div:nth-child(2) {
+        -webkit-animation-delay: 3s;
+        -ms-animation-delay: 3s;
+        animation-delay: 3s;
+    }
+
+    .rw-words-1 div:nth-child(3) {
+        -webkit-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+
+    .rw-words-1 div:nth-child(4) {
+        -webkit-animation-delay: 9s;
+        -ms-animation-delay: 9s;
+        animation-delay: 9s;
+    }
+
+    .rw-words-1 div:nth-child(5) {
+        -webkit-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        animation-delay: 12s;
+    }
+
+    .rw-words-1 div:nth-child(6) {
+        -webkit-animation-delay: 15s;
+        -ms-animation-delay: 15s;
+        animation-delay: 15s;
+    }
+
+    .rw-words-1 div:nth-child(7) {
+        -webkit-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+
+    .rw-words-1 div:nth-child(8) {
+        -webkit-animation-delay: 21s;
+        -ms-animation-delay: 21s;
+        animation-delay: 21s;
+    }
+
+    .rw-words-1 div:nth-child(9) {
+        -webkit-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+
+    .rw-words-1 div:nth-child(10) {
+        -webkit-animation-delay: 27s;
+        -ms-animation-delay: 27s;
+        animation-delay: 27s;
+    }
+
+    .rw-words-1 div:nth-child(11) {
+        -webkit-animation-delay: 30s;
+        -ms-animation-delay: 30s;
+        animation-delay: 30s;
+    }
+
+
+@-webkit-keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+
+    2% {
+        opacity: 0;
+        -webkit-transform: translateY(-30px);
+    }
+
+    5% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+
+    10% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+
+    15% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+
+    2% {
+        opacity: 0;
+        -ms-transform: translateY(-30px);
+    }
+
+    5% {
+        opacity: 1;
+        -ms-transform: translateY(0px);
+    }
+
+    10% {
+        opacity: 1;
+        -ms-transform: translateY(0px);
+    }
+
+    15% {
+        opacity: 0;
+        -ms-transform: translateY(30px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotateWord {
+    0% {
+        opacity: 0;
+    }
+
+    2% {
+        opacity: 0;
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+
+    5% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+
+    10% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+
+    15% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rw-sentence {
+        font-size: 10px;
+        font-weight: normal;
+    }
+
+    .rw-wrapper {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .rw-sentence {
+        font-size: 8px;
+        font-weight: normal;
+    }
+
+    .rw-wrapper {
+        padding: 0;
+    }
+}
+

@@ -1,9 +1,46 @@
 ﻿body {
     padding-top: 50px;
+    background-image: url(../Images/brick-wall-dark.png);
     /*padding-bottom: 20px;*/
     background-color: #f5a456;
-    background-image: url(../Images/brick-wall-dark.png);
+    /*background: url(../Images/bg-hindu.png) no-repeat center center fixed;*/
+    /*-webkit-background-size: cover; 
+    -moz-background-size: cover;    
+    -o-background-size: cover;      
+    background-size: cover;*/
 }
+
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.image-bg-fluid-height {
+    background: url(../Images/bgheader.png);
+    padding: 20px 0;
+}
+
+.image-bg-fixed-height {
+    /*background: url(../Images/bgheader.png) no-repeat center center scroll;*/
+    height: 200px;
+    padding: 20px 0;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+.img-shadow {
+    background-color: #ffffff;
+    /*border: 1px solid black;*/
+    opacity: 0.9;
+    /*filter: alpha(opacity=70);*/
+}
+
 
 .navbar-default {
     /*background-image: -webkit-linear-gradient(top, #ed6637 0%, #dd4814 100%);
@@ -37,6 +74,16 @@ textarea {
     /*background-image: url('../Images/brick-wall-dark.png');*/
 }
 
+/* Note: Try to remove the following lines to see the effect of CSS positioning */
+.affix {
+    top: 0;
+    width: 100%;
+}
+
+    .affix + .container-fluid {
+        padding-top: 70px;
+    }
+
 .navbar-brand1 {
     float: left;
     padding-left: 15px;
@@ -45,13 +92,19 @@ textarea {
     font-size: 18px;
     line-height: 20px;
     height: 50px;
+    display: none;
 }
+
+.affix .navbar-brand1 {
+    display: block;
+}
+
 
 .bg-site {
     background-color: #ffffff; /*#dd4814;*/
     border: 1px solid #dd4814;
     border-radius: 4px;
-    min-height:500px;
+    min-height: 500px;
 }
 
 .bg-events {

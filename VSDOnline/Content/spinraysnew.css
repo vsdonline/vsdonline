@@ -1,0 +1,161 @@
+﻿/* keyframes for animation;  simple 0 to 360 */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* basic structure for the rays setup */
+#raysDemoHolder {
+    /*position: relative;*/
+    /*width: 490px;
+    height: 490px;
+    margin: 100px 0 0 200px;*/
+}
+
+/*#raysLogo {
+    width: 300px;
+    height: 233px;
+    text-indent: -3000px;
+    background: url(logo.png) 0 0 no-repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}*/
+
+
+#rays { /* with animation properties */
+    background: url(../Images/rays_200x200.png) 0 0 no-repeat;
+    position: absolute;
+    left: -40px;
+    top: -60px;
+    width: 200px;
+    height: 200px;
+    /*top: -100px;
+    left: -100px;
+    width: 490px;
+    height: 490px;*/
+    /* microsoft ie */
+    animation-name: spin;
+    animation-duration: 40000ms; /* 40 seconds */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#rays1 { /* with animation properties */
+    background: url(../Images/rays_200x200.png) 0 0 no-repeat;
+    position: absolute;
+    right: -60px;
+    top: -50px;
+    width: 200px;
+    height: 200px;
+    /*top: -100px;
+    right: -120px;*/
+    /*width: 490px;
+    height: 490p*/;
+    /* microsoft ie */
+    animation-name: spin;
+    animation-duration: 40000ms; /* 40 seconds */
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+#rays:hover {
+    /* animation-duration: 10000ms; 10 seconds - speed it up on hover! */
+    /* resets the position though!  sucks */
+}
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    #rays {
+        left: -60px;
+        top: -80px;
+        width: 290px;
+        height: 290px;
+        /*left: -200px;
+        top: -200px;
+        width: 200px;
+        height: 200px;*/
+        background: url(../Images/rays_290x290.png) 0 0 no-repeat;
+    }
+
+    #rays1 {
+        right: -120px;
+        top: -100px;
+        width: 290px;
+        height: 290px;
+        background: url(../Images/rays_290x290.png) 0 0 no-repeat;
+        /*right: -120px;
+        top: -190px;*/
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    #rays {
+        /*left: -100px;
+        top: -100px;
+        width: 390px;
+        height: 390px;*/
+        top: -80px;
+        left: -60px;
+        width: 290px;
+        height: 290px;
+        background: url(../Images/rays_290x290.png) 0 0 no-repeat;
+    }
+
+    #rays1 {
+        /*right: -120px;
+        top: -100px;
+        width: 390px;
+        height: 390px;*/
+        top: -150px;
+        right: -170px;
+        width: 490px;
+        height: 490px;
+        background: url(../Images/rays-main.png) 0 0 no-repeat;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    #rays {
+        left: -60px;
+        top: -80px;
+        /*width: 390px;
+        height: 390px;*/
+        /*top: -100px;
+        left: -100px;*/
+        width: 290px;
+        height: 290px;
+        background: url(../Images/rays_290x290.png) 0 0 no-repeat;
+    }
+
+    #rays1 {
+        /*right: -120px;
+        top: -100px;
+        width: 390px;
+        height: 390px;*/
+        top: -100px;
+        right: -120px;
+        width: 490px;
+        height: 490px;
+        background: url(../Images/rays-main.png) 0 0 no-repeat;
+    }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+}
