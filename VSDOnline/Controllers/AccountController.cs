@@ -79,6 +79,7 @@ namespace VSDOnline.Controllers
                 if (!await UserManager.IsEmailConfirmedAsync(user.Id))
                 {
                     string callbackUrl = await SendEmailConfirmationTokenAsync(user);
+                    ViewBag.errorTitle = "Confirm email error";
                     ViewBag.errorMessage = "You must have a confirmed email to log on.";
                     return View("Error");
                 }
@@ -110,6 +111,7 @@ namespace VSDOnline.Controllers
             // Require that the user has already logged in via username/password or external login
             if (!await SignInManager.HasBeenVerifiedAsync())
             {
+                ViewBag.errorTitle = "Verify code error";
                 return View("Error");
             }
             return View(new VerifyCodeViewModel { Provider = provider, ReturnUrl = returnUrl, RememberMe = rememberMe });
@@ -211,6 +213,7 @@ namespace VSDOnline.Controllers
         {
             if (userId == null || code == null)
             {
+                ViewBag.errorTitle = "Confirm email error";
                 return View("Error");
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
@@ -266,6 +269,7 @@ namespace VSDOnline.Controllers
         [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
+            ViewBag.errorTitle = "Confirm email error";
             return code == null ? View("Error") : View();
         }
 
@@ -322,6 +326,7 @@ namespace VSDOnline.Controllers
             var userId = await SignInManager.GetVerifiedUserIdAsync();
             if (userId == null)
             {
+                ViewBag.errorTitle = "Sendcode error";
                 return View("Error");
             }
             var userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
@@ -344,6 +349,7 @@ namespace VSDOnline.Controllers
             // Generate the token and send it
             if (!await SignInManager.SendTwoFactorCodeAsync(model.SelectedProvider))
             {
+                ViewBag.errorTitle = "SendTwoFactor code error";
                 return View("Error");
             }
             return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
