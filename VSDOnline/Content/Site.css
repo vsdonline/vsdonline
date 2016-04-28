@@ -247,3 +247,17 @@ textarea {
     opacity: 0.5;
     z-index: -1;
 }*/
+
+
+#hue {
+	background-color: hsl(0, 100%, 50%); /*red*/
+	animation: hue 3s infinite alternate;
+}
+@keyframes hue {
+	/*hue will animate from 0 to 360. Saturation and Lightness remain constant*/
+	20% {background-color: hsl(72, 100%, 50%);}
+	40% {background-color: hsl(144, 100%, 50%);}
+	60% {background-color: hsl(216, 100%, 50%);}
+	80% {background-color: hsl(288, 100%, 50%);}
+	100% {background-color: hsl(360, 100%, 50%);}
+}
