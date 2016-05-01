@@ -254,6 +254,7 @@
     <Content Include="Images\carousel\ThirdImage.png" />
     <Content Include="Images\Circles.png" />
     <Content Include="Images\events-satyavratam.png" />
+    <Content Include="Images\events\bajan.jpg" />
     <Content Include="Images\events\bajans.jpg" />
     <Content Include="Images\events\dattajayanthi.jpg" />
     <Content Include="Images\events\gurucharitra.png" />
