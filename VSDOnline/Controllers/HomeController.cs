@@ -51,6 +51,11 @@ namespace VSDOnline.Controllers
             return View();
         }
 
+        public ActionResult LiveDarshan()
+        {
+            ViewBag.Message = "LiveDarshan";
+            return View();
+        }
 
     }
 }
