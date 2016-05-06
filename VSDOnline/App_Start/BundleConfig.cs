@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Optimization;
 
 namespace VSDOnline
@@ -33,15 +34,26 @@ namespace VSDOnline
                       "~/Content/adtext-rotator.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/youtube", "https://www.youtube.com/iframe_api").Include(
-                "~/Scripts/youtubeAudio.js"
-                        ));
-            bundles.Add(new ScriptBundle("~/bundles/site").Include(
-                "~/Scripts/site.js",
-                "~/Scripts/google-analytics.js"
-            ));
+                "~/Scripts/youtubeAudio.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/histats").Include(
-                "~/Scripts/histats-counter.js"));
+            bundles.Add(new ScriptBundle("~/bundles/site").Include("~/Scripts/site.js"));
+
+            bundles.Add(new StyleBundle("~/Content/nonresponsive").Include("~/Content/non-responsive.css"));
+
+            InjectAnalyticsScript(bundles);
         }
+
+        public static void InjectAnalyticsScript(BundleCollection bundles)
+        {
+            var injectAnalyticsScript = ConfigurationManager.AppSettings.Get("InjectAnalyticsScript") ?? "false";
+
+            if (string.Equals(injectAnalyticsScript, "true", System.StringComparison.OrdinalIgnoreCase))
+            {
+                bundles.GetBundleFor("~/bundles/site").Include("~/Scripts/google-analytics.js");
+                bundles.Add(new ScriptBundle("~/bundles/histats").Include("~/Scripts/histats-counter.js"));
+            }
+        }
+
+
     }
 }

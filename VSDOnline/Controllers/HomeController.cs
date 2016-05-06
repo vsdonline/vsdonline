@@ -53,6 +53,7 @@ namespace VSDOnline.Controllers
 
         public ActionResult LiveDarshan()
         {
+            ViewBag.skipviewport = true;
             ViewBag.Message = "LiveDarshan";
             return View();
         }

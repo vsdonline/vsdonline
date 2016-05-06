@@ -232,6 +232,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\non-responsive.css" />
     <Content Include="Content\social-buttons.css" />
     <Content Include="Content\spinrays.css" />
     <Content Include="Content\spinraysnew.css" />
@@ -241,6 +242,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\300resolution.png" />
     <Content Include="Images\AllSymbols.png" />
     <Content Include="Images\banner.png" />
     <Content Include="Images\bg-hindu.png" />
