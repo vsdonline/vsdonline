@@ -118,10 +118,13 @@
     @*<div class="adspace">*@
     <div class="adspace">
         <div class="nav">
-            <div class="col-xs-6 col-lg-6">
+            <div class="col-xs-4 col-lg-4">
                 <div class="headertext">Shradha</div>
+            </div>           
+            <div class="col-xs-4 col-lg-4 text-center">
+                <audio class="audiocontrol" src="~/Audio/vsdsong.mp3" controls ></audio>
             </div>
-            <div class="col-xs-6 col-lg-6 text-right">
+            <div class="col-xs-4 col-lg-4 text-right">               
                 <div class="headertext">Saburi</div>
             </div>
         </div>
@@ -172,11 +175,20 @@
                     @*<div class="hitcount">Hit Count: @VSDOnline.MvcApplication.TotalNumberOfUsers</div>*@
                 </div>
                 <div class="col-lg-6">
+                    @*<div class="navbar-text pull-right">*@
+                    <a href="https://www.facebook.com/people/Vishwa-Sai-Dwarakamai-Wasaibaba/100010447690972" target="_blank" class="btn btn-facebook pull-right" alt="Viswa Sai Dwarakamai Facebook">
+                        @*<img class="img-responsive"  src="~/Images/socialmedia/YouTube-logo-full_color.png" width="48" height="48"/>*@
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    @*</div>*@
+                    @*<div class="hitcount">Hit Count: @VSDOnline.MvcApplication.TotalNumberOfUsers</div>*@
+                </div>
+                <!--<div class="col-lg-6">
                     @*<img id="imgaudioplaypause" class="imgaudioplaypause pause pull-right" />*@
-                    <audio class="audiocontrol pull-right" src="~/Audio/vsdsong.mp3" autoplay controls loop>
+                    <audio class="audiocontrol pull-right" src="~/Audio/vsdsong.mp3"  controls >
                         @*<p>browser does not support the audio element.</p>*@
                     </audio>
-                </div>
+                </div>-->
             </div>
         </div>
         @*<p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>*@
