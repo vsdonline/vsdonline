@@ -27,10 +27,13 @@ namespace VSDOnline.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Event> Events { get; set; }
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<VSDOnline.Models.Video> Videos { get; set; }
     }
 }

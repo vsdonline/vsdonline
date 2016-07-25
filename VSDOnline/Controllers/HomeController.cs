@@ -1,16 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VSDOnline.Models;
+using System.Threading.Tasks;
 
 namespace VSDOnline.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            return View();
+            var model = new HomePageViewModel();
+            model.UpcomingEvent = db.Events.OrderByDescending(dE => dE.ID).FirstOrDefault();
+
+            if (db.Videos.Count() > 4)
+            {
+                model.Videos = db.Videos.OrderByDescending(d => d.ID).Take(4).ToList();
+            }
+            else
+            {
+                model.Videos = db.Videos.OrderByDescending(d => d.ID).ToList();
+            }
+
+            return View(model);
         }
 
         public ActionResult About()
@@ -61,6 +78,15 @@ namespace VSDOnline.Controllers
         {
             ViewBag.Message = "SaiGayatri";
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

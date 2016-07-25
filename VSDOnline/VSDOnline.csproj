@@ -204,6 +204,9 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
+    <Compile Include="DAL\VsdContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -215,10 +218,21 @@
     <Compile Include="Migrations\201604171718359_AspNetUsers.Designer.cs">
       <DependentUpon>201604171718359_AspNetUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607240500466_Events.cs" />
+    <Compile Include="Migrations\201607240500466_Events.Designer.cs">
+      <DependentUpon>201607240500466_Events.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607241614139_Videos.cs" />
+    <Compile Include="Migrations\201607241614139_Videos.Designer.cs">
+      <DependentUpon>201607241614139_Videos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\HomePageViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -382,6 +396,16 @@
     <Content Include="Views\Shared\Info.cshtml" />
     <Content Include="Views\Home\LiveDarshan.cshtml" />
     <Content Include="Views\Home\SaiGayatri.cshtml" />
+    <Content Include="Views\Settings\Create.cshtml" />
+    <Content Include="Views\Settings\Delete.cshtml" />
+    <Content Include="Views\Settings\Details.cshtml" />
+    <Content Include="Views\Settings\Edit.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Videos\Create.cshtml" />
+    <Content Include="Views\Videos\Delete.cshtml" />
+    <Content Include="Views\Videos\Details.cshtml" />
+    <Content Include="Views\Videos\Edit.cshtml" />
+    <Content Include="Views\Videos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -400,6 +424,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604171718359_AspNetUsers.resx">
       <DependentUpon>201604171718359_AspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607240500466_Events.resx">
+      <DependentUpon>201607240500466_Events.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607241614139_Videos.resx">
+      <DependentUpon>201607241614139_Videos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -83,8 +83,23 @@
                 @Html.Partial("_LoginPartial")
                 <ul class="nav navbar-nav navbar-left">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                            <li>@Html.ActionLink("Satcharitra", "Satcharitra", "Home")</li>
+                            <li>@Html.ActionLink("Aarthi", "Aarthi", "Home")</li>
+                            <li>@Html.ActionLink("Sai Gayatri Laksharchana", "SaiGayatri", "Home")</li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Events", "Index", "Events")</li>
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Videos", "Video", "Home")</li>
+                            <li>@Html.ActionLink("Photo Gallrey", "Satcharitra", "Home")</li>
+                        </ul>
+                    </li>*@
                     @*<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Events<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
@@ -97,18 +112,17 @@
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
                         </li>*@
-                    <li>@Html.ActionLink("Satcharitra", "Satcharitra", "Home")</li>
-                    <li>@Html.ActionLink("Aarthi", "Aarthi", "Home")</li>
+
+
                     <li>@Html.ActionLink("Donation", "Donate", "Home")</li>
                     @*<li><a href="http://shrisaibabasansthan.org.in/darshan/shirdi-live-darshan/" target="_blank">Live Darshan</a></li>*@
                     <li>@Html.ActionLink("Live-Darshan", "LiveDarshan", "Home")</li>
-                    <li>@Html.ActionLink("Sai Gayatri Laksharchana", "SaiGayatri", "Home")</li>
                     <li>@Html.ActionLink("AboutUs", "About", "Home")</li>
                     <li>@Html.ActionLink("ContactUs", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
-        
+
     </div>
 
     <div class="adspace bg-adspace">
@@ -121,11 +135,11 @@
         <div class="nav">
             <div class="col-xs-4 col-lg-4">
                 <div class="headertext">Shradha</div>
-            </div>           
-            <div class="col-xs-4 col-lg-4 text-center">
-                <audio class="audiocontrol" src="~/Audio/vsdsong.mp3" controls ></audio>
             </div>
-            <div class="col-xs-4 col-lg-4 text-right">               
+            <div class="col-xs-4 col-lg-4 text-center">
+                <audio class="audiocontrol" src="~/Audio/vsdsong.mp3" controls></audio>
+            </div>
+            <div class="col-xs-4 col-lg-4 text-right">
                 <div class="headertext">Saburi</div>
             </div>
         </div>
@@ -158,11 +172,11 @@
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="Donate" alt="PayPal - The safer, easier way to pay online!" onclick="window.location ='@Url.Action("Donate", "Home")'; return false;">
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     @*<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="LBSNXPXF38CMQ">
-                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                    </form>*@
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="LBSNXPXF38CMQ">
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                        </form>*@
                 </div>
             </div>
             <div class="row">
