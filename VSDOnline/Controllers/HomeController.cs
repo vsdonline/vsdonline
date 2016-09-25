@@ -27,6 +27,15 @@ namespace VSDOnline.Controllers
                 model.Videos = db.Videos.OrderByDescending(d => d.ID).ToList();
             }
 
+            if (db.Photos.Count() > 4)
+            {
+                model.Photos = db.Photos.OrderByDescending(d => d.ID).Take(4).ToList();
+            }
+            else
+            {
+                model.Photos = db.Photos.OrderByDescending(d => d.ID).ToList();
+            }
+
             return View(model);
         }
 

@@ -22,23 +22,7 @@
     </div>
     <div class="row">
         <div class="col-md-2 col-lg-2">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Settings</div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul>
-                                <li>
-                                    @Html.ActionLink("Events", "Index", "Settings")
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Videos", "Index", "Videos")
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @Html.Partial("_SettingsPartial")
         </div>
         <div class="col-md-10 col-lg-10">
             <div class="panel panel-primary">

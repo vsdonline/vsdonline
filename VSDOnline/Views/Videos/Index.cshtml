@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    int counter = 0;
 }
 
 <div class="container bg-site">
@@ -40,26 +39,10 @@
         @if (Context.User.IsInRole("Admin"))
         {
             <div class="col-md-2 col-lg-2">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Settings</div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul>
-                                    <li>
-                                        @Html.ActionLink("Events", "Index", "Settings")
-                                    </li>
-                                    <li class="active">
-                                        @Html.ActionLink("Videos", "Index", "Videos")
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @Html.Partial("_SettingsPartial")
             </div>
         }
-        <div class="@(Context.User.IsInRole("Admin")?"col-md-10 col-lg-10" : "col-md-12 col-lg-112")">
+        <div class="@(Context.User.IsInRole("Admin") ? "col-md-10 col-lg-10" : "col-md-12 col-lg-112")">
             <div class="panel panel-primary">
                 <div class="panel-heading">Videos</div>
                 <div class="panel-body">
@@ -72,13 +55,14 @@
                             </div>
                         </div>
                     }
+
+                    @{ int counter = 0;}
                     @foreach (var video in Model)
                     {
 
-                        if (counter != 0 && counter % 3 == 0)
+                        if (counter ==0)
                         {
-                            @:</div>
-                        @:<div class="row">
+                           @:<div class="row">
                         }
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
@@ -102,7 +86,15 @@
                             </div>
                         </div>
 
-                        counter++;
+                        if (counter == 2)
+                        {
+                            counter = 0;
+                            @:</div>
+                        }
+                        else
+                        {
+                            counter++;
+                        }
                     }
                 </div>
                 @*<div class="row">

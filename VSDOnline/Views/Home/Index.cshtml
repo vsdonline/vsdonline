@@ -320,7 +320,18 @@
                 <div style="height:200px;">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover" style="width:330px; margin: 0 auto; float:left">
                         <div class="carousel-inner">
-                            <div class="item">
+                            @for (var i = 0; i < Model.Photos.Count; i++)
+                            {
+                                    <div class="item @(i == 0 ? "active" : string.Empty ) ">
+                                    <a href="@Model.Photos[i].AlbumLink" target="_blank">
+                                        <img src="@Model.Photos[i].ImageLink" alt="" class="img-responsive">
+                                        <div class="carousel-caption">
+                                            <h4>@Model.Photos[i].Name</h4>
+                                        </div>
+                                        </a>
+                                </div>
+                            }
+                          @*<div class="item">
                                 <img src="https://drive.google.com/uc?id=0BynChJWS6JMfaFp5em42c0FMT1U" alt="" class="img-responsive">
                                 <div class="carousel-caption">
                                     <h4>Viswa Sai Sammelanam</h4>
@@ -343,12 +354,15 @@
                                 <div class="carousel-caption">
                                     <h4>Plantations</h4>
                                 </div>
-                            </div>
+                            </div>*@
                         </div> <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
                         <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
                     </div>
 
 
+                </div>
+                <div class="col-md-12  text-right">
+                    @Html.ActionLink("More Photos...", "Index", "Photos")
                 </div>
             </div>
 

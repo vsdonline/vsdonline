@@ -35,5 +35,7 @@ namespace VSDOnline.Models
         }
 
         public System.Data.Entity.DbSet<VSDOnline.Models.Video> Videos { get; set; }
+
+        public System.Data.Entity.DbSet<VSDOnline.Models.Photos> Photos { get; set; }
     }
 }

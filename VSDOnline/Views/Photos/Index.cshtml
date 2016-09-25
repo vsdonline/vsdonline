@@ -1,0 +1,176 @@
+﻿@model IEnumerable<VSDOnline.Models.Photos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container bg-site">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Settings
+                <small>Viswa Sai Dwarakamai</small>
+            </h1>
+            @if (Context.User.IsInRole("Admin"))
+            {
+                <ol class="breadcrumb">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Settings", "Index", "Settings")
+                    </li>
+                    <li class="active">Photos</li>
+                </ol>
+            }
+            else
+            {
+                <ol class="breadcrumb">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+                    <li class="active">Photos</li>
+                </ol>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Context.User.IsInRole("Admin"))
+        {
+            <div class="col-md-2 col-lg-2">
+                @Html.Partial("_SettingsPartial")
+                @*<div class="panel panel-primary">
+                    <div class="panel-heading">Settings</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul>
+                                    <li>
+                                        @Html.ActionLink("Events", "Index", "Settings")
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Videos", "Index", "Videos")
+                                    </li>
+                                    <li class="active">
+                                        @Html.ActionLink("Phtoos", "Index", "Photos")
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+        }
+
+        <div class="@(Context.User.IsInRole("Admin") ? "col-md-10 col-lg-10" : "col-md-12 col-lg-112")">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Photos</div>
+                <div class="panel-body">
+                    @if (Context.User.IsInRole("Admin"))
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.ActionLink("Create New", "Create")
+                                <hr />
+                            </div>
+                        </div>
+                    }
+                    @{ int photoCounter = 0;}
+                    @foreach (var photo in Model)
+                    {
+
+                        if (photoCounter == 0)
+                        {
+                            @:<div class="row">
+                        }
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <a href="@photo.AlbumLink" target="_blank">
+                                    <img src="@photo.ImageLink" alt="" class="img-responsive">
+                                    @*<div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="@photo.Link"></iframe>
+                                        </div>*@
+                                </a>
+                                <div class="caption">
+                                    <h3>@photo.Name</h3>
+                                    <p>@photo.Description</p>
+                                    @if (Context.User.IsInRole("Admin"))
+                                    {
+                                        <p>
+                                            @Html.ActionLink("Edit", "Edit", new { id = photo.ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = photo.ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = photo.ID })
+                                        </p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        if (photoCounter == 2)
+                        {
+                            photoCounter = 0;
+                            @:</div>
+                        }
+                        else
+                        {
+                            photoCounter++;
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlbumLink)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumLink)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>*@
