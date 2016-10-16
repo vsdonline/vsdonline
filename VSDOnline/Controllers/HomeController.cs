@@ -16,6 +16,8 @@ namespace VSDOnline.Controllers
         public ActionResult Index()
         {
             var model = new HomePageViewModel();
+
+            model.siteConfig = db.SiteConfigs.ToList();
             model.UpcomingEvent = db.Events.OrderByDescending(dE => dE.ID).FirstOrDefault();
 
             if (db.Videos.Count() > 4)

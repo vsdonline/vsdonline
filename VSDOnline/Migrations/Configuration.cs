@@ -9,7 +9,7 @@ namespace VSDOnline.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "VSDOnline.Models.ApplicationDbContext";
         }
 
@@ -27,6 +27,12 @@ namespace VSDOnline.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            if (!context.SiteConfigs.Any(p => p.Name=="LiveUrl"))
+            {
+                context.SiteConfigs.Add(new VSDOnline.Models.SiteConfig { Name = "LiveUrl" });
+            }
+            context.SaveChanges();
         }
     }
 }

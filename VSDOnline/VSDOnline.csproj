@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SiteConfigsController.cs" />
     <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="DAL\VsdContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,6 +232,10 @@
     <Compile Include="Migrations\201609242143042_Photos.Designer.cs">
       <DependentUpon>201609242143042_Photos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610160328573_SiteConfig.cs" />
+    <Compile Include="Migrations\201610160328573_SiteConfig.Designer.cs">
+      <DependentUpon>201610160328573_SiteConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs" />
@@ -238,6 +243,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Photos.cs" />
+    <Compile Include="Models\SiteConfig.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -418,6 +424,11 @@
     <Content Include="Views\Photos\Edit.cshtml" />
     <Content Include="Views\Photos\Index.cshtml" />
     <Content Include="Views\Shared\_SettingsPartial.cshtml" />
+    <Content Include="Views\SiteConfigs\Create.cshtml" />
+    <Content Include="Views\SiteConfigs\Delete.cshtml" />
+    <Content Include="Views\SiteConfigs\Details.cshtml" />
+    <Content Include="Views\SiteConfigs\Edit.cshtml" />
+    <Content Include="Views\SiteConfigs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -445,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609242143042_Photos.resx">
       <DependentUpon>201609242143042_Photos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610160328573_SiteConfig.resx">
+      <DependentUpon>201610160328573_SiteConfig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

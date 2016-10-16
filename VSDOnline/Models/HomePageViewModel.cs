@@ -10,5 +10,6 @@ namespace VSDOnline.Models
         public Event UpcomingEvent { get; set; }
         public IList<Video> Videos { get; set; }
         public IList<Photos> Photos { get; set; }
+        public IList<SiteConfig> siteConfig { get; set; }
     }
 }
