@@ -327,6 +327,7 @@
     <Content Include="Images\socialmedia\YouTube-social-squircle_red_24px.png" />
     <Content Include="Images\spinrays_180x180.png" />
     <Content Include="Images\spinrays_200x200.png" />
+    <Content Include="Images\SriGuruji.png" />
     <Content Include="Images\vanamma.png" />
     <Content Include="Images\vsd.png" />
     <Content Include="Images\vsdbg.png" />
@@ -429,6 +430,7 @@
     <Content Include="Views\SiteConfigs\Details.cshtml" />
     <Content Include="Views\SiteConfigs\Edit.cshtml" />
     <Content Include="Views\SiteConfigs\Index.cshtml" />
+    <Content Include="Views\Home\AboutGuruji.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

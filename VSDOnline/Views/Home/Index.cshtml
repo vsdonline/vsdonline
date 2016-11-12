@@ -234,6 +234,22 @@
                 </div>
             </div>
 
+            <div class="panel panel-primary">
+                <div class="panel-heading">About Guruji</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="~/Images/SriGuruji.png" class="img-responsive" />
+                        </div>
+                        <div class="col-md-8 text-justify">
+                            <p>Mathru Devo Bhava! Pithru Devo Bhava ! Acharya Devo Bhava!</p>
+                            <p>Sri Shirdi Sai Baba&rsquo;s Disciple,Worshipper (Upasak), Sri Laxmoji Ventrapragada was born on May 6, 1968 in Andhra Pradesh to Punya Dampatulu Late Sri Lokanadha Rao and Smt. Sarojini Devi. His father was commendably served as the Deputy Director of Animal Husbandry in erstwhile Andhra Pradesh state and left his earthly body on July 6th,2013. His mother is now resides with their 2nd eldest son Sri. Daya Sagar who is an advocate in Hyderabad (Telangana State) . He has a twin brother Sri Ramoji Ventrapragada resides in San Diego, California also a Shirdi Sai Baba devotee and is loved existentially by Sri Laxmoji.</p>
+                            @Html.ActionLink("Read more...", "AboutGuruji", "Home")
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             @{
                 var LiveUrl = Model.siteConfig.ToList().Find(p => p.Name == "LiveUrl");
 
@@ -306,31 +322,67 @@
 
         </div>
         <div class="col-md-4 col-lg-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Upcoming Events</div>
-                <div class="panel-body">
-                    @if (Model.UpcomingEvent != null)
-                    {
-                        <p><b>Event Name:</b></p>
-                        <p><b>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Name))</b></p>
-                        <p><b>Description:</b></p>
-                        <p>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Description))</p>
-                        <p><b>Date:</b></p>
-                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Date))</p>
-                        <p><b>Time:</b></p>
-                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Time))</p>
-                        <p><b>Venue:</b></p>
-                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Venue))</p>
-                        <p><b>Contact Details:</b></p>
-                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.ContactDetails))</p>
-                    }
-                    @*<p><b><u>Volunteering at "Second Harvest Food Bank"</u></b></p>
-                        <p>Satsang is purely on Sri Sai Baba preachings, tatvam and greatness of Sadguru by Sai Upasak Sri Laxmoji Ventrapragada from California, USA</p>
-                        <p><b>Date :</b> 23rd July 2016</p>
-                        <p><b>Time :</b> @@8.00 AM - 11.30AM </p>
-                        <p><b>Venue:</b> Washington Youth Center, 921 S First Street, San Jose, 95110 </p>
-                        <p><b>Contact# Sirisha :</b> (408) 609-6647, Navya: (510) 396-9394</p>*@
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Upcoming Events</h4>
+                        </div>
+                        <div class="modal-body">
+                            @if (Model.UpcomingEvent != null)
+                            {
+                                <p><b>Event Name:</b></p>
+                                        <p><b>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Name))</b></p>
+                                        <p><b>Description:</b></p>
+                                        <p>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Description))</p>
+                                        <p><b>Date:</b></p>
+                                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Date))</p>
+                                        <p><b>Time:</b></p>
+                                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Time))</p>
+                                        <p><b>Venue:</b></p>
+                                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Venue))</p>
+                                        <p><b>Contact Details:</b></p>
+                                        <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.ContactDetails))</p>
+                            }
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading"><a href="#" class="bg-primary" data-toggle="modal" data-target="#myModal">Upcoming Events</a>
+                 
+                </div>
+                <div class="panel-body">
+                    @*<marquee direction="up" scrolldelay="110" onmouseover="this.stop()" onmouseout="this.start()" bgcolor="">*@
+                        @if (Model.UpcomingEvent != null)
+                        {
+                            <p><b>Event Name:</b></p>
+                            <p style="color:#FF0000;background-color:rgb(255, 255, 0)"><b>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Name))</b></p>
+                            <p><b>Description:</b></p>
+                            <p>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Description))</p>
+                            <p><b>Date:</b></p>
+                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Date))</p>
+                            <p><b>Time:</b></p>
+                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Time))</p>
+                            <p><b>Venue:</b></p>
+                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Venue))</p>
+                            <p><b>Contact Details:</b></p>
+                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.ContactDetails))</p>
+                        }
+                    @*</marquee>*@
+                        @*<p><b><u>Volunteering at "Second Harvest Food Bank"</u></b></p>
+            <p>Satsang is purely on Sri Sai Baba preachings, tatvam and greatness of Sadguru by Sai Upasak Sri Laxmoji Ventrapragada from California, USA</p>
+            <p><b>Date :</b> 23rd July 2016</p>
+            <p><b>Time :</b> @@8.00 AM - 11.30AM </p>
+            <p><b>Venue:</b> Washington Youth Center, 921 S First Street, San Jose, 95110 </p>
+            <p><b>Contact# Sirisha :</b> (408) 609-6647, Navya: (510) 396-9394</p>*@
+</div>
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">Recent Pictures</div>

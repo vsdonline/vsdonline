@@ -117,8 +117,16 @@
                     <li>@Html.ActionLink("Donation", "Donate", "Home")</li>
                     @*<li><a href="http://shrisaibabasansthan.org.in/darshan/shirdi-live-darshan/" target="_blank">Live Darshan</a></li>*@
                     <li>@Html.ActionLink("Live-Darshan", "LiveDarshan", "Home")</li>
-                    <li>@Html.ActionLink("AboutUs", "About", "Home")</li>
-                    <li>@Html.ActionLink("ContactUs", "Contact", "Home")</li>
+                    
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                            <li>@Html.ActionLink("About Guruji", "AboutGuruji", "Home")</li>
+                            <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                        </ul>
+                    </li>                    
                 </ul>
             </div>
         </div>
@@ -137,7 +145,7 @@
                 <div class="headertext">Shradha</div>
             </div>
             <div class="col-xs-4 col-lg-4 text-center">
-                <audio class="audiocontrol" src="~/Audio/vsdsong.mp3" controls></audio>
+                <audio class="audiocontrol" src="https://drive.google.com/uc?id=0BynChJWS6JMfanppOHZTRy00aUU" controls></audio>
             </div>
             <div class="col-xs-4 col-lg-4 text-right">
                 <div class="headertext">Saburi</div>

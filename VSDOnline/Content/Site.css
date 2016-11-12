@@ -203,6 +203,10 @@ textarea {
     font-size: 15px;
 }
 
+.upcomingevents{
+    height:300px;
+    max-height:300px;
+}
 
 /*.dropdown-menu:before {
   position: absolute;
