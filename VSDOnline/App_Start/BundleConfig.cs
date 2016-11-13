@@ -10,7 +10,8 @@ namespace VSDOnline
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.jplayer.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -31,7 +32,8 @@ namespace VSDOnline
                       "~/Content/social-buttons.css",
                       "~/Content/site.css",
                       "~/Content/spinrays.css",
-                      "~/Content/adtext-rotator.css"));
+                      "~/Content/adtext-rotator.css",
+                      "~/Content/jplayer.blue.monday.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/youtube", "https://www.youtube.com/iframe_api").Include(
                 "~/Scripts/youtubeAudio.js"));

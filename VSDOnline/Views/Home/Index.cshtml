@@ -282,7 +282,7 @@
                     <div class="col-md-6">
                         <a href="#" class="thumbnail">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="@video.Link"></iframe>
+                                <iframe class="embed-responsive-item" src="@string.Format("{0}?version=2&enablejsapi=1&theme=light",video.Link)"></iframe>
                             </div>
                         </a>
                     </div>
@@ -358,24 +358,26 @@
                 <div class="panel-heading"><a href="#" class="bg-primary" data-toggle="modal" data-target="#myModal">Upcoming Events</a>
                  
                 </div>
-                <div class="panel-body">
-                    @*<marquee direction="up" scrolldelay="110" onmouseover="this.stop()" onmouseout="this.start()" bgcolor="">*@
+                <div class="panel-body upcomingevents">
+                   
                         @if (Model.UpcomingEvent != null)
                         {
                             <p><b>Event Name:</b></p>
                             <p style="color:#FF0000;background-color:rgb(255, 255, 0)"><b>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Name))</b></p>
-                            <p><b>Description:</b></p>
-                            <p>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Description))</p>
-                            <p><b>Date:</b></p>
-                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Date))</p>
-                            <p><b>Time:</b></p>
-                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Time))</p>
-                            <p><b>Venue:</b></p>
-                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Venue))</p>
-                            <p><b>Contact Details:</b></p>
-                            <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.ContactDetails))</p>
+                            <marquee direction="up" scrolldelay="110"  onmouseover="this.stop()" onmouseout="this.start()" bgcolor="">
+                                <p><b>Description:</b></p>
+                                <p>@Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Description))</p>
+                                <p><b>Date:</b></p>
+                                <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Date))</p>
+                                <p><b>Time:</b></p>
+                                <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Time))</p>
+                                <p><b>Venue:</b></p>
+                                <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.Venue))</p>
+                                <p><b>Contact Details:</b></p>
+                                <p> @Html.Raw(Server.HtmlDecode(Model.UpcomingEvent.ContactDetails))</p>
+                            </marquee>
                         }
-                    @*</marquee>*@
+
                         @*<p><b><u>Volunteering at "Second Harvest Food Bank"</u></b></p>
             <p>Satsang is purely on Sri Sai Baba preachings, tatvam and greatness of Sadguru by Sai Upasak Sri Laxmoji Ventrapragada from California, USA</p>
             <p><b>Date :</b> 23rd July 2016</p>
@@ -591,5 +593,6 @@
                 <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
             </div>
         </div>*@
-    @Scripts.Render("~/bundles/youtube")
+    @*@Scripts.RenderFormat("<script src='{0}' defer></script>", "~/bundles/youtube")*@
+   
     @Scripts.Render("~/bundles/histats")
