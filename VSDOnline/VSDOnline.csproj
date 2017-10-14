@@ -201,6 +201,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChantingsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -236,8 +237,13 @@
     <Compile Include="Migrations\201610160328573_SiteConfig.Designer.cs">
       <DependentUpon>201610160328573_SiteConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710140212306_chantings.cs" />
+    <Compile Include="Migrations\201710140212306_chantings.Designer.cs">
+      <DependentUpon>201710140212306_chantings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Chanting.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\HomePageViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -278,6 +284,7 @@
     <Content Include="Images\bgsite.png" />
     <Content Include="Images\black-thread.png" />
     <Content Include="Images\brick-wall-dark.png" />
+    <Content Include="Images\carousel\banner-web.png" />
     <Content Include="Images\carousel\FirstImage.png" />
     <Content Include="Images\carousel\SecondImage.png" />
     <Content Include="Images\carousel\ThirdImage.png" />
@@ -437,6 +444,11 @@
     <Content Include="Views\SiteConfigs\Edit.cshtml" />
     <Content Include="Views\SiteConfigs\Index.cshtml" />
     <Content Include="Views\Home\AboutGuruji.cshtml" />
+    <Content Include="Views\Chantings\Create.cshtml" />
+    <Content Include="Views\Chantings\Delete.cshtml" />
+    <Content Include="Views\Chantings\Details.cshtml" />
+    <Content Include="Views\Chantings\Edit.cshtml" />
+    <Content Include="Views\Chantings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -467,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610160328573_SiteConfig.resx">
       <DependentUpon>201610160328573_SiteConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710140212306_chantings.resx">
+      <DependentUpon>201710140212306_chantings.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

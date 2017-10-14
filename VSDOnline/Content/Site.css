@@ -282,3 +282,11 @@ textarea {
     width    : 1280px;
     height   : 1200px;
 }*/
+
+.blink_me {
+  animation: blinker 8s linear infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}

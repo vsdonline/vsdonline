@@ -15,6 +15,18 @@ namespace VSDOnline.Controllers
 
         public ActionResult Index()
         {
+            var tot = from a in db.Chantings
+                      where a.Approved == true
+                      select a;
+
+            int? count = tot.ToList().Sum(y => y.MantraCount);
+            //ViewBag.TotalCount = count;
+
+            //TempData.Peek("TotalCount");
+            //TempData["TotalCount"] = count;
+            Session["TotalCount"] = count;
+
+
             var model = new HomePageViewModel();
 
             model.siteConfig = db.SiteConfigs.ToList();
